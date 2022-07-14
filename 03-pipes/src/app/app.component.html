@@ -1,0 +1,162 @@
+<h1>Pipes </h1> <small> Angular</small>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Variable</th>
+                    <th>Pipe</th>
+                    <th>Salida</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>uppercase</td>
+                    <td>{{nombre | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>lowercase</td>
+                    <td>{{nombre | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>slice:3</td>
+                    <td>{{nombre | slice:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>slice:0:3</td>
+                    <td>{{nombre | slice:0:3}}</td>
+                </tr>
+                <tr>
+                    <td>{{arreglo}}</td>
+                    <td>slice:1:5</td>
+                    <td>{{arreglo | slice:1:5}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number</td>
+                    <td>{{PI | number}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number:'1.0-0'</td>
+                    <td>{{PI | number:'1.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number:'3.0-0'</td>
+                    <td>{{PI | number:'3.0-0'}}</td>
+                </tr>
+                <tr>
+                    <td>{{PI}}</td>
+                    <td>number:'.0-2'</td>
+                    <td>{{PI | number:'.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentaje}}</td>
+                    <td>percent</td>
+                    <td>{{porcentaje | percent}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentajeDos}}</td>
+                    <td>percent</td>
+                    <td>{{porcentajeDos | percent}}</td>
+                </tr>
+                <tr>
+                    <td>{{porcentajeDos}}</td>
+                    <td>percent:'.0-2'</td>
+                    <td>{{porcentajeDos | percent:'.0-2'}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency</td>
+                    <td>{{salario | currency}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency</td>
+                    <td>{{salario | currency:'PEN'}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency:'CAD':'symbol-narrow':'.0-4'</td>
+                    <td>{{salario | currency:'CAD':'symbol-narrow':'.0-4'}}</td>
+                </tr>
+                <tr>
+                    <td>{{miPromesa}}</td>
+                    <td>async</td>
+                    <td>{{miPromesa | async}}</td>
+                </tr>
+                <tr>
+                    <td>{{salario}}</td>
+                    <td>currency:'CAD':'symbol':'.0-4'</td>
+                    <td>{{salario | currency:'CAD':'symbol':'.0-4'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date</td>
+                    <td>{{fecha | date}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'medium'</td>
+                    <td>{{fecha | date:'medium'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'short'</td>
+                    <td>{{fecha | date:'short'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'MMMM - dd'</td>
+                    <td>{{fecha | date:'MMMM - dd'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'MMMM - dd':'':'en'</td>
+                    <td>{{fecha | date:'MMMM - dd':'':'en'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date:'MMMM - dd':'':'fr'</td>
+                    <td>{{fecha | date:'MMMM - dd':'':'fr'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>
+                        date:'MMMM - dd':'':'{{idioma}}'
+                        <br>
+                        <button (click)="idioma='es'" class="btn btn-primary" type="button">Español</button>
+                        <button (click)="idioma='fr'" class="btn btn-secondary" type="button">Fránces</button>
+                        <button (click)="idioma='en'" class="btn btn-warning" type="button">Inglés</button>
+                    </td>
+                    <td>{{fecha | date:'MMMM - dd':'':idioma}}</td>
+                </tr>
+                <tr>
+                    <td>{{nombreDos}} </td>
+                    <td>capitalizado - propio pipe</td>
+                    <td>{{nombreDos | capitalizado:false}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<h4>Slice Pipe</h4>
+<ul>
+    <li *ngFor="let item of arreglo | slice:4:9">{{item}}</li>
+</ul>
+<hr>
+<h4>JSON Pipe</h4>
+<div>
+    <pre>
+        {{heroe | json}}
+    </pre>
+    {{heroe | json}}
+</div>
