@@ -1,0 +1,20 @@
+<div [ngClass]="alertClass" class="alert" role="alert">
+    A simple primary alert—check it out!
+</div>
+
+<button type="button" class="btn mx-2 btn-primary" (click)="alertClass = 'alert-primary'">Primary</button>
+<button type="button" class="btn mx-2 btn-secondary" (click)="alertClass = 'alert-secondary'">Secondary</button>
+<button type="button" class="btn mx-2 btn-success" (click)="alertClass = 'alert-success'">Success</button>
+<button type="button" class="btn mx-2 btn-danger" (click)="alertClass = 'alert-danger'">Danger</button>
+<button type="button" class="btn mx-2 btn-warning" (click)="alertClass = 'alert-warning'">Warning</button>
+<button type="button" class="btn mx-2 btn-info" (click)="alertClass = 'alert-info'">Info</button>
+<button type="button" class="btn mx-2 btn-light" (click)="alertClass = 'alert-light'">Light</button>
+<button type="button" class="btn mx-2 btn-dark" (click)="alertClass = 'alert-dark'">Dark</button>
+
+<br><br>
+<h3>Proceso asincrono</h3>
+<button type="button" class="btn mx-2 btn-primary" (click)="loadData()" [disabled]="loading">
+    <span [ngClass]="{'spinner-border spinner-border-sm': loading}" role="status" aria-hidden="true"></span>
+    <span *ngIf="!loading">Guardar cambios</span>
+    <span *ngIf="loading">Guardando cambios</span>
+</button>
